@@ -1,0 +1,28 @@
+<% layout('layouts/boilerplate') %>
+<div class="col-6 offset-3">
+    <h1>All Pets Available for Adoption</h1>
+    <div class="mb-3">
+        <a href="/adoptables/new" class="btn btn-success">Add Animal</a>
+    </div>
+    <% for(let adoptable of adoptables){%>
+    <div class="card mb-3">
+        <div class="card-img-top">
+            <img class="img-fluid" src=<%=adoptable.images[0].url%>>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                <%= adoptable.title %>
+            </h5>
+            <p class="card-text">
+                <%= adoptable.description %>
+            </p>
+            <p class="text-muted">
+                <%= adoptable.location %>
+            </p>
+
+            <a class="btn btn-primary" href="/adoptables/<%= adoptable.id %>">View
+            </a>
+        </div>
+    </div>
+    <% }%>
+</div>
