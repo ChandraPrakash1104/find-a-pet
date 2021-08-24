@@ -1,5 +1,5 @@
 # find-a-pet
 
-##DEMO
+## DEMO
 
 https://blooming-gorge-11335.herokuapp.com/
