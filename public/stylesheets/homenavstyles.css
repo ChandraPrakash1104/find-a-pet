@@ -14,7 +14,6 @@ nav{
     align-items: center;
     min-height: 8vh;
     font-family: 'Open Sans', sans-serif;
-    background-color: var(--navColor) ;
     
 }
 
@@ -27,7 +26,7 @@ nav{
 .nav-links{
     display: flex;
     justify-content: space-evenly;
-    width: 30%;
+    width: 18%;
 }
 
 
@@ -81,11 +80,9 @@ nav{
     }
     .nav-links{
         position: absolute;
-        /* right: 0px; */
-        height: 30vh;
+        height: 20vh;
         top: 8vh;
         width: 100%;
-        background-color: var(--navColor);
         display: flex;
         flex-direction: column;
         align-items: center;

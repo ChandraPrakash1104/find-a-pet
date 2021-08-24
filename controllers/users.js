@@ -34,5 +34,5 @@ module.exports.login = (req, res) => {
 module.exports.logout = (req, res) => {
     req.logOut();
     req.flash('success', 'Loged Out');
-    res.redirect('/adoptables');
+    res.redirect('/');
 }
