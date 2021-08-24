@@ -3,61 +3,53 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adoptme-home</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/home.css">
+    <title>Navigation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/stylesheets/homenavstyles.css">
+    <link rel="stylesheet" href="/stylesheets/homebody.css">
 </head>
 
-<body class="d-flex text-center text-white bg-dark">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="mb-auto">
-            <div>
+<body>
+    <nav>
+        <div class="logo">
+            <h2>FindAPet
+                <img src="/graphics/logo.svg" alt="logo" class="logo-paw">
+            </h2>
 
-                <h3 class="float-md-left mb-0">FindAPet</h3>
-                <div class="float-md-left mb-0">
-                    <img class="paw-1" src="/graphics/paw.svg" alt="">
-                    <img class="paw-2" src="/graphics/paw.svg" alt="">
-                </div>
+        </div>
+        <ul class="nav-links">
+            <!-- <li><a href=""> Home</a></li> -->
+            <li><a href="/adoptables"> FInd</a></li>
+            <% if(!currentUser) {%>
+            <li><a href="/login"> login</a></li>
+            <li><a href="/register"> register</a></li>
+            <% } else{ %>
+            <li><a href="/logout"> logout</a></li>
+            <% } %>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
 
-                <nav class="nav nav-masthead justify-content-center float-md-right">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="/adoptables">Find A Pet</a>
-                    <% if(!currentUser) { %>
-                    <a class="nav-link" href="/login">Login</a>
-                    <a class="nav-link" href="/register">Register</a>
-                    <% } else { %>
-                    <a class="nav-link" href="/logout">Logout</a>
-                    <% } %>
-                </nav>
-            </div>
-        </header>
-        <main class="px-3">
-            <h1>FindAPet</h1>
-            <p class="lead"> Welcome to FindAPet!
-                <br>Searchable database of animals who need homes <br>
-                You can adopt<br>
-                Or by uploading necessary details<br>
-                you can save a life.
-            </p>
-            <a href="/adoptables" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">Adopt</a>
-        </main>
-
-        <footer class="mt-auto text-white-50">
-            <p>&copy; 2020 </p>
-        </footer>
-
-
+    <div class="text-body">
+        <p class="lead"> Welcome to FindAPet!
+            <br>Searchable database of animals who need homes. <br>
+            You can adopt<br>
+            Or by uploading necessary details<br>
+            you can save a life.<br>
+        </p>
+        <a href="/adoptables" class="main-button">Adopt</a>
     </div>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-        crossorigin="anonymous"></script>
+    <footer>
+        <p>&copy; 2021 </p>
+    </footer>
+    <script src="/javascripts/homeapp.js"></script>
 </body>
 
 </html>

@@ -11,15 +11,22 @@ body {
   max-width: 60vw;
 }
 
+h1{
+    font-weight: 400;
+}
+h3{
+    font-weight: 400;
+}
+
 .nav-link {
     padding: 0.25rem 0;
-    font-weight: 700;
+    font-weight: 400;
     color: rgba(255,255,255,0.5);
     margin-left: 1rem;
     border-bottom: 0.25rem solid transparent;
 }
 
-.nav-link:hover{
+.nav-link :hover{
     color: rgba(255,255,255,0.5);
     border-bottom-color:rgba(255,255,255,0.5);
 }
