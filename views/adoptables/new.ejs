@@ -1,42 +1,33 @@
 <% layout('layouts/boilerplate') %>
 
-<head>
-    <title>Add</title>
-</head>
-<div class="row">
-    <h1 class="text-center">New Animal</h1>
-    <div class="col-6 offset-3">
-        <form action="/adoptables" method="POST" novalidate class="validation-form" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label class="form-label" for="title">Title</label>
-                <input class="form-control" type="text" id="title" name="adoptable[title]" required>
-                <div class="valid-feedback">
-                    Looks good
+    <head>
+        <title>Add</title>
+    </head>
+    <div class="row">
+        <h1 class="text-center">New Animal</h1>
+        <div class="col-6 offset-3">
+            <form action="/adoptables" method="POST" novalidate class="validation-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="adoptable[title]" required>
                 </div>
-            </div>
-            <div class="mb-3">
-                <label lass="form-label" for="adoptable">Location</label>
-                <input class="form-control" type="text" id="adoptable" name="adoptable[location]" required>
-                <div class="valid-feedback">
-                    Looks good
+                <div class="mb-3">
+                    <label lass="form-label" for="adoptable">Location</label>
+                    <input class="form-control" type="text" id="adoptable" name="adoptable[location]" required>
                 </div>
-            </div>
-            <div class="mb-3">
-                <label lass="form-label" for="description">Description</label>
-                <textarea class="form-control" type="text" id="description" required
-                    name="adoptable[description]"></textarea>
-                <div class="valid-feedback">
-                    Looks good
+                <div class="mb-3">
+                    <label lass="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" required
+                        name="adoptable[description]"></textarea>
                 </div>
-            </div>
-            <div class="mb-3">
-                <label for="formFileMultiple" class="form-label">Add Images</label>
-                <input class="form-control" type="file" id="image" name="image" multiple>
-            </div>
-            <div class="mb-3">
-                <button class="btn btn-success">Add Animal</button>
-            </div>
-        </form>
-        <a href="/adoptables " class="btn btn-primary">All Animals</a>
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Add Images</label>
+                    <input class="form-control" type="file" id="image" name="image" multiple>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success">Add Animal</button>
+                </div>
+            </form>
+            <a href="/adoptables " class="btn btn-primary">All Animals</a>
+        </div>
     </div>
-</div>

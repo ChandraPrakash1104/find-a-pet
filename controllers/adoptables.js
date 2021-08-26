@@ -23,7 +23,7 @@ module.exports.createAdoptable = async (req, res, next) => {
     adoptable.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
     adoptable.author = req.user._id;
     await adoptable.save();
-    req.flash('success', 'Successfull!')
+    req.flash('success', 'Submitted!')
     res.redirect(`/adoptables/${adoptable._id}`)
 
 }

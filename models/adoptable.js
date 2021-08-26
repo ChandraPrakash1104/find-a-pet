@@ -7,8 +7,17 @@ const ImageSchema = new Schema({
 });
 
 ImageSchema.virtual('thumbnail').get(function () {
-    return this.url.replace('/upload', '/upload/w_200'); 
+    return this.url.replace('/upload', '/upload/w_200');
 });
+
+ImageSchema.virtual('index').get(function () {
+    return this.url.replace('/upload', '/upload/w_500,h_500,c_limit,f_auto,q_auto');
+});
+
+ImageSchema.virtual('show').get(function () {
+    return this.url.replace('/upload', '/upload/w_500,h_500,c_limit/w_500,h_300,c_crop,f_auto,q_auto');
+});
+
 
 const opts = { toJSON: { virtuals: true } };
 
