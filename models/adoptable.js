@@ -26,6 +26,7 @@ const AdoptableSchema = new Schema({
     images: [ImageSchema],
     description: String,
     location: String,
+    timeStamp: Number,
     geometry: {
         type: {
             type: String,

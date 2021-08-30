@@ -26,6 +26,7 @@ const seedDB = async () => {
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             image: "https://source.unsplash.com/collection/8501158",
             title: `${sample(color)} ${sample(age)} ${sample(size)} ${sample(animal)} `,
+            timeStamp: Date.now(),
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aliquam optio ut error quos molestiae eum itaque asperiores natus nemo, exercitationem deserunt vel nesciunt accusantium animi. Earum neque enim quas.',
             geometry: {
                 type: "Point",

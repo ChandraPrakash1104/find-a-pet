@@ -3,6 +3,7 @@ const { cloudinary } = require("../cloudinary")
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const mapBoxToken = process.env.MAPBOX_TOKEN;
 const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
+const moment = require('moment');
 
 module.exports.index = async (req, res) => {
     const adoptables = await Adoptable.find({});
@@ -19,6 +20,7 @@ module.exports.createAdoptable = async (req, res, next) => {
         limit: 1
     }).send()
     const adoptable = new Adoptable(req.body.adoptable);
+    adoptable.timeStamp = Date.now();
     adoptable.geometry = geoData.body.features[0].geometry;
     adoptable.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
     adoptable.author = req.user._id;
@@ -34,7 +36,8 @@ module.exports.showAdoptable = async (req, res) => {
         req.flash('error', 'Cannot find!');
         return res.redirect('/adoptables');
     }
-    res.render('adoptables/show', { adoptable });
+    const time = moment(adoptable.timeStamp).fromNow();
+    res.render('adoptables/show', { adoptable, time });
 }
 module.exports.renderEditForm = async (req, res) => {
     const { id } = req.params;
@@ -51,6 +54,7 @@ module.exports.updateAdoptable = async (req, res) => {
     const adoptable = await Adoptable.findByIdAndUpdate(id, { ...req.body.adoptable })
     const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));
     adoptable.images.push(...imgs);
+    adoptable.timeStamp = Date.now();
     await adoptable.save();
     if (req.body.deleteImages) {
         for (let filename of req.body.deleteImages) {
